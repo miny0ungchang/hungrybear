@@ -1,1 +1,7 @@
 // Specific CSS for your home-page
+.home-hero {
+  background-image: image-url("home-hero-img.jpg");
+  background-position: center;
+  background-size: cover;
+  min-height: 600px;
+}
