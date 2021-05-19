@@ -5,6 +5,6 @@ class Restaurant < ApplicationRecord
 
   validates :name, presence: true, uniqueness: true
   cuisines = %w[French Italian Fast\Food Japanese Indian Chinese Peranakan Korean Spanish Salads Street\Food]
-  validates :cuisine, inclusion: { in: cuisines }
+  validates :category, inclusion: { in: cuisines }
   validates :rating, inclusion: { in: (1..5) }
 end
