@@ -1,6 +1,7 @@
 class User < ApplicationRecord
-  belongs_to :restaurant
-  belongs_to :order
+  has_many :restaurants
+  has_many :orders
+
   validates :name, presence: true
   validates :email, presence: true, uniqueness: true
   validates :password, presence: true, confirmation: true
