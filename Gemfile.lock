@@ -224,7 +224,11 @@ DEPENDENCIES
   byebug
   capybara (>= 2.15)
   dotenv-rails
+<<<<<<< HEAD
   faker
+=======
+  faker (~> 2.18)
+>>>>>>> master
   font-awesome-sass
   jbuilder (~> 2.7)
   listen (~> 3.2)

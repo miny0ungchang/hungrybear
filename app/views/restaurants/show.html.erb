@@ -1,0 +1,15 @@
+<div class="container">
+  <h2 class="resto-name font-weight-bold mt-2 mb-0"><%= @restaurant.name %></h2>
+  <h4><%= @restaurant.address %></h4>
+  <img src="<%= @restaurant.img_url %>" alt="" width="450" height="350">
+  <div class="delivery-time">
+    <span class="min-time"><%= @restaurant.min_time %></span>-<span class="max-time"><%= @restaurant.max_time %> min</span>
+    <h5><%= @restaurant.category %> <%= '🌝' * @restaurant.rating %></h5>
+  </div>
+
+  <div class="row mt-5">
+    <% @menu_items.each do |menu_item| %>
+    <%= render 'menu_item_card', menu_item: menu_item %>
+    <% end %>
+  </div>
+</div>
