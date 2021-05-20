@@ -1,8 +1,22 @@
+<section class="resto-top d-flex flex-wrap align-items-center justify-content-between">
+  <div class="container py-5">
+    <h1 class="display-3 font-weight-bolder text-white">You crave.<br>We get it.</h1>
+  </div>
+</section>
 
 
-<div class="container mt-3">
-  <% @restaurants.each do |resto| %>
-    <%= resto.name %>
-    <%= resto.address %>
-  <% end %> 
-</div>
+<% @restaurants.each do |resto| %>
+<a href="/restaurants/<%= resto.id %>">
+  <div class="card" style="width:450px; height: 280px">
+    <div>
+      <img src="<%= resto.img_url %>" class="card-img-top" style="width:fit; height:fit" alt="resto_pic">
+    </div>
+    <div class="card-body">            
+      <h5 class="card-title"><%= resto.name %></h5>
+      <p class="card-text"><%= resto.address %></p>
+      <p class="card-text">Rating :<%= resto.rating %><i class="bi bi-star"></i></p>
+      <p class="card-text">Delivery Time : <%= resto.min_time %> to <%= resto.max_time %></p>
+    </div>
+  </div>
+</a>
+<% end %> 
