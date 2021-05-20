@@ -2,11 +2,11 @@
 
 <section class="home-hero d-flex flex-wrap align-items-center justify-content-between">
   <div class="container py-5">
-    <h1 class="display-3 font-weight-bolder">Want something?</h1>
+    <h1 class="display-4 font-weight-bolder">Want something?</h1>
     <p>Food, drinks, groceries, and more available for delivery and pickup.</p>
-    <div class="home-hero-search mt-5 col-12 col-md-6 px-0">
+    <div class="home-hero-search mt-5 col-12 col-md-5 px-0">
       <div class="input-group mb-3">
-        <input type="text" class="form-control p-4" placeholder="Marine Parade, Singapore" aria-label="Recipient's username" aria-describedby="button-addon2">
+        <input type="text" class="form-control p-4" placeholder="Enter your address…" aria-label="Location" aria-describedby="button-addon2">
         <div class="input-group-append">
           <button class="btn btn-dark px-3" type="button" id="button-addon2"><i class="fas fa-arrow-right"></i></button>
         </div>
@@ -16,23 +16,23 @@
 </section>
 <section class="home-section-body bg-white">
   <div class="container py-5">
-    <div class="d-flex flex-wrap align-items-center justify-content-between">
+    <div class="d-flex flex-wrap flex-column-reverse flex-md-row align-items-center justify-content-between">
       <div class="col-12 col-md-6 align-items-center">
         <h2 class="font-weight-bold">Save big on every order.<br>Join Unlimited.</h2>
         <p>Unlimited free deliveries. Reduced fees on eligible orders. Exclusive deals. Try Postmates Unlimited now for free, cancel anytime.</p>
-        <a href="#" class="btn btn-success px-4 py-2 rounded-pill font-weight-bold">TRY UNLIMITED FREE</a>
+        <a href="#" class="btn btn-success btn-section text-light rounded-pill font-weight-bold">TRY UNLIMITED FREE</a>
       </div>
-      <div class="col-12 col-md-6 align-items-center">
-        <%= image_tag 'home-unlimited.jpg', class: 'col-12' %>
+      <div class="col-12 col-md-6 mb-4 mb-md-0 align-items-center">
+        <%= image_tag 'home/home-unlimited.jpg', class: 'col-12' %>
       </div>
     </div>
   </div>
 </section>
 <section class="home-section-body bg-white">
   <div class="container py-5">
-    <div class="d-flex flex-wrap align-items-center justify-content-between">
-      <div class="col-12 col-md-6 align-items-center">
-        <%= image_tag 'home-mobile-app.jpg', class: 'col-12' %>
+    <div class="d-flex flex-wrap flex-md-row align-items-center justify-content-between ">
+      <div class="col-12 col-md-6 mb-4 mb-md-0 align-items-center">
+        <%= image_tag 'home/home-mobile-app.jpg', class: 'col-12' %>
       </div>
       <div class="col-12 col-md-6 align-items-center">
         <h2 class="font-weight-bold">Order from local favorites near you.</h2>
@@ -40,25 +40,34 @@
         <div class="my-4">
           <form>
             <div class="form-group">
-              <input type="email" class="form-control col-12 col-md-8 p-4" id="exampleFormControlInput1" placeholder="Enter your number to get the app">
+              <input type="email" class="form-control col-12 col-md-8 p-4" id="exampleFormControlInput1" placeholder="Enter your number to get the app">              
             </div>
+            <button type="submit" class="btn btn-success btn-section text-light rounded-pill font-weight-bold">GET THE APP</button>
           </form>
         </div>
-        <a href="#" class="btn btn-success px-4 py-2 rounded-pill font-weight-bold">GET THE APP</a>
       </div>
     </div>
   </div>
 </section>
 <section class="home-section-body bg-white">
   <div class="container py-5">
-    <div class="d-flex flex-wrap align-items-center justify-content-between">
+    <div class="d-flex flex-wrap flex-column-reverse flex-md-row align-items-center justify-content-between">
       <div class="col-12 col-md-6 align-items-center">
         <h2 class="font-weight-bold">We deliver more than dinner.</h2>
         <p>Need another charger? Kitchen staples? Party supplies? We’ve got everything you need available for delivery within an hour.</p>
-        <a href="#" class="btn btn-success px-4 py-2 rounded-pill font-weight-bold">ORDER NOW</a>
+        <a href="#" class="btn btn-success btn-section text-light rounded-pill font-weight-bold">ORDER NOW</a>
       </div>
-      <div class="col-12 col-md-6 align-items-center">
-        <%= image_tag 'home-other-stuff.jpg', class: 'col-12' %>
+      <div class="home-items col-12 col-md-6 mb-4 mb-md-0">
+        <div class="row d-flex flex-wrap align-items-center justify-content-between">
+          <%= image_tag 'home/airpods-pro.jpg' %>
+          <%= image_tag 'home/wicked-bone-dog-toy.jpg' %>
+          <%= image_tag 'home/vitamins.jpg' %>
+        </div>
+        <div class="row d-flex flex-wrap align-items-center justify-content-between">
+          <%= image_tag 'home/watermelon.jpg' %>
+          <%= image_tag 'home/tiger-beer.jpg' %>
+          <%= image_tag 'home/baby-sharks.jpg' %>
+        </div>
       </div>
     </div>
   </div>
