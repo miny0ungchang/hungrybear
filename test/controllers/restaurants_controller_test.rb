@@ -10,5 +10,4 @@ class RestaurantsControllerTest < ActionDispatch::IntegrationTest
     get restaurants_show_url
     assert_response :success
   end
-
 end
