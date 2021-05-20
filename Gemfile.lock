@@ -224,9 +224,7 @@ DEPENDENCIES
   byebug
   capybara (>= 2.15)
   dotenv-rails
-
-  faker (~> 2.18)
-
+  faker
   font-awesome-sass
   jbuilder (~> 2.7)
   listen (~> 3.2)
@@ -250,4 +248,4 @@ RUBY VERSION
    ruby 2.6.6p146
 
 BUNDLED WITH
-   2.2.5
+   2.2.10
