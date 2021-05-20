@@ -1,0 +1,14 @@
+<div class="col-3 mb-3">
+  <div class="menu_item-card">
+    <div class="menu_item-display">
+      <img class="menu_item-image" src="<%= menu_item.img_url %>" alt="">
+      <div>
+        <span class="menu_item-price text-muted"> <%= humanized_price(menu_item.price) %> </span>
+      </div>
+    </div>
+    <div class="menu_item-info">
+      <p class="menu_item-name font-weight-bold mt-2 mb-0"> <%= menu_item.name %></p>
+      <p class="menu_item-description"> <%= menu_item.description %></p>
+    </div>
+  </div>
+</div>
