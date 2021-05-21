@@ -3,21 +3,51 @@
     <h1 class="display-3 font-weight-bolder text-white">You crave.<br>We get it.</h1>
   </div>
 </section>
-
-<div class="container mb-3">
-  <div class="d-flex pt-5">
-      <div class="d-flex">
-        <h3><strong>Daily Deals</strong></h3>
+<div class="header-restaurant border-bottom">
+  <div class="d-flex justify-content-between m-auto" style="height: 100%; max-width: 1024px;">
+    <div class="d-flex position-relative align-items-center">
+      <div class="d-flex justify-content-between">
+        <div class="bd-highlight">Delivery</div>
+        <div class="bd-highlight" style="padding-left: 10px">📍<%= @parameter %></div> 
       </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-restaurant">
+  <div class="d-flex pt-5">
+    <div class="d-flex">
+      <h3><strong>Daily Deals</strong></h3>
+    </div>
   </div>
   <div class="d-flex justify-content-between border-bottom">
     <p>Epic deals from your favorite restaurants!</p>
     <p>view all 24</p>
   </div>
-  <div class="flex justify-content-between" >
+  <div class="d-flex justify-content-between pt-5" >
     <% @restaurants.each do |resto| %>
       <a href="/restaurants/<%= resto.id %>">
-        <div class="card" style="width: 18rem;">
+        <div class="card text-dark" style="width: 20rem;">
+          <img class="card-img-top" src="<%= resto.img_url %>" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title"><%= resto.name %></h5>
+            <p class="card-text"><%= resto.address %></p>
+            <p class="card-text">Rating :<%= resto.rating %><i class="bi bi-star"></i></p>
+            <p class="card-text">Delivery Time : <%= resto.min_time %> to <%= resto.max_time %></p>
+          </div>
+        </div>   
+      </a>
+    <% end %>
+  </div>
+  <div class="d-flex pt-5 border-bottom">
+    <div class="d-flex">
+      <h3><strong>Nearby</strong></h3>
+    </div>
+  </div>
+  <div class="d-flex justify-content-between pt-5" >
+    <% @restaurants.each do |resto| %>
+      <a href="/restaurants/<%= resto.id %>">
+        <div class="card text-dark" style="width: 20rem;">
           <img class="card-img-top" src="<%= resto.img_url %>" alt="Card image cap">
           <div class="card-body">
             <h5 class="card-title"><%= resto.name %></h5>
