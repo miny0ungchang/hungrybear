@@ -1,43 +1,48 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title> <%= content_for :page_title %> | Postmates: Food Delivery, Groceries, Alcohol - Anything from Anywhere</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
-    <%= stylesheet_pack_tag 'application' %>
+<head>
+  <title> <%= content_for :page_title %> | Postmates: Food Delivery, Groceries, Alcohol - Anything from Anywhere</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+    
   </head>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= stylesheet_pack_tag 'application' %>
 
-  <body>
-    <header>
-      <div class="header-wrap container p-3 d-flex flex-wrap align-items-center justify-content-between">
-        <h1 class="mb-0">
-          <%= link_to root_path, class: 'text-dark font-weight-bolder' do %> 
-            POSTMATES
-          <% end %>
-        </h1>
-        <nav class="d-flex flex-wrap justify-content-between">
-          <%= link_to 'LOG IN', root_path, class: 'btn btn-outline-dark mr-2 mr-md-3 rounded-pill px-2 px-md-4' %>
-          <%= link_to 'SIGN UP', root_path, class: 'btn btn-dark rounded-pill px-2 px-md-4' %>
-        </nav>
+  <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
+</head>
+
+<body>
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+  <header>
+    <div class="header-wrap container p-3 d-flex flex-wrap align-items-center justify-content-between">
+      <h1 class="mb-0">
+        <%= link_to root_path, class: 'text-dark font-weight-bolder' do %>
+        POSTMATES
+        <% end %>
+      </h1>
+      <nav class="d-flex flex-wrap justify-content-between">
+        <%= link_to 'LOG IN', new_user_session_path, class: 'btn btn-outline-dark mr-2 mr-md-3 rounded-pill px-2 px-md-4' %>
+        <%= link_to 'SIGN UP', new_user_registration_path, class: 'btn btn-dark rounded-pill px-2 px-md-4' %>
+      </nav>
+    </div>
+  </header>
+  <%= yield %>
+  <footer class="bg-dark">
+    <div class="container py-4">
+      <div>
+        <p class="font-weight-bold mb-1 text-muted">Postmates is the largest, most reliable on-demand delivery and pickup platform.</p>
+        <p class="mb-0 text-muted">Able to deliver anything from anywhere, Postmates is the food delivery, grocery delivery, whatever-you-can-think-of delivery app to bring what you crave right to your door.</p>
       </div>
-    </header>
-    <%= yield %>
-    <footer class="bg-dark">
-      <div class="container py-4">
-        <div>
-          <p class="font-weight-bold mb-1 text-muted">Postmates is the largest, most reliable on-demand delivery and pickup platform.</p>
-          <p class="mb-0 text-muted">Able to deliver anything from anywhere, Postmates is the food delivery, grocery delivery, whatever-you-can-think-of delivery app to bring what you crave right to your door.</p>
-        </div>
-        <div class="mt-4">
-          <p class="mb-0 text-light font-weight-bold">&copy; <%= Time.zone.now.year %> <%= link_to 'POSTMATES INC', root_path, class: 'text-light' %></p>
-        </div>
+      <div class="mt-4">
+        <p class="mb-0 text-light font-weight-bold">&copy; <%= Time.zone.now.year %> <%= link_to 'POSTMATES INC', root_path, class: 'text-light' %></p>
       </div>
-    </footer>
-  </body>
+    </div>
+  </footer>
+</body>
+
 </html>

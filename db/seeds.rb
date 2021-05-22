@@ -12,11 +12,8 @@ resto_catg = %w[French Italian Fast\Food Japanese Indian Chinese Peranakan Korea
 
 3.times do
   User.create!(
-    name: Faker::Name.name,
     email: Faker::Internet.email,
     password: "secret",
-    address: Faker::Address.full_address,
-    mobile_number: Faker::PhoneNumber.cell_phone
   )
 end
 
@@ -31,7 +28,8 @@ end
     img_url: resto_images.sample,
     lat: Faker::Address.latitude,
     lng: Faker::Address.longitude,
-    user_id: [1, 2, 3].sample
+    #user_id: [1, 2, 3].sample
+    user: User.all.sample
   )
 end
 
