@@ -21,8 +21,16 @@ class RestaurantsController < ApplicationController
     if params[:search].blank?  
       redirect_to(root_path, alert: "Empty field!") and return  
     else  
-      @parameter = params[:search].strip + ", Singapore"
+      @parameter = params[:search].strip
       @restaurants = Restaurant.near(@parameter, 5)
-    end   
+
+      @markers = @restaurants.geocoded.map do |restaurant|
+        {
+          lat: restaurant.latitude,
+          lng: restaurant.longitude,
+          info_window: render_to_string(partial: "info_window", locals: { restaurant: restaurant })
+        }
+      end
+    end
   end
 end
