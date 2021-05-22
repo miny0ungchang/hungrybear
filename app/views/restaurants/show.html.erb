@@ -1,3 +1,16 @@
+<section class="menu-top d-flex flex-wrap align-items-center justify-content-between">
+</section>
+<div class="header-restaurant border-bottom">
+  <div class="d-flex justify-content-between m-auto" style="height: 100%; max-width: 1024px;">
+    <div class="d-flex position-relative align-items-center">
+      <div class="d-flex justify-content-between">
+        <div class="bd-highlight">Delivery</div>
+        <div class="bd-highlight" style="padding-left: 10px">📍<%= @parameter %></div> 
+      </div>
+    </div>
+  </div>
+</div>
+
 <div class="container">
   <h2 class="resto-name font-weight-bold mt-2 mb-0"><%= @restaurant.name %></h2>
   <h4><%= @restaurant.address %></h4>
@@ -7,9 +20,26 @@
     <h5><%= @restaurant.category %> <%= '🌝' * @restaurant.rating %></h5>
   </div>
 
+  <div class="d-flex justify-content-between pt-5" >
+    <% @menu_items.each do |menu_item| %>>
+        <div class="card text-dark" style="width: 20rem;">
+          <img class="card-img-top" src="<%= resto.img_url %>" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title"><%= resto.name %></h5>
+            <p class="card-text"><%= resto.address %></p>
+            <p class="card-text">Rating :<%= resto.rating %><i class="bi bi-star"></i></p>
+            <p class="card-text">Delivery Time : <%= resto.min_time %> to <%= resto.max_time %></p>
+          </div>
+        </div>   
+      </a>
+    <% end %>
+  </div>
+
   <div class="row mt-5">
     <% @menu_items.each do |menu_item| %>
     <%= render 'menu_item_card', menu_item: menu_item %>
+    <input type="button" id="add-to-cart-button" value="ADD TO CART" style="width: 5rem; height: 3rem;">      
     <% end %>
   </div>
 </div>
+
