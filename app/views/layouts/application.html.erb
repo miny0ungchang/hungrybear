@@ -30,19 +30,16 @@
     </div>
   </header>
   <%= yield %>
-  <%= render "pages/cta" %>
-
   <footer class="bg-dark">
     <div class="container py-4">
       <div>
         <p class="font-weight-bold mb-1 text-muted">Postmates is the largest, most reliable on-demand delivery and pickup platform.</p>
         <p class="mb-0 text-muted">Able to deliver anything from anywhere, Postmates is the food delivery, grocery delivery, whatever-you-can-think-of delivery app to bring what you crave right to your door.</p>
       </div>
-      <div class="mt-4">
-        <p class="mb-0 text-light font-weight-bold">&copy; <%= Time.zone.now.year %> <%= link_to 'POSTMATES INC', root_path, class: 'text-light' %></p>
-      </div>
-    </div>
+        <div class="mt-4">
+          <p class="mb-0 text-light font-weight-bold">&copy; <%= Time.zone.now.year %> <%= link_to 'POSTMATES INC', root_path, class: 'text-light' %></p>
+        </div>
+       </div>
   </footer>
 </body>
-
 </html>
