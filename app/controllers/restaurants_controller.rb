@@ -13,8 +13,8 @@ class RestaurantsController < ApplicationController
     if params[:search].blank?  
       redirect_to(root_path, alert: "Empty field!") and return  
     else  
-      @parameter = params[:search].strip
-      @restaurants = Restaurant.where("address ~* ?", @parameter)
+      @parameter = params[:search].strip + ", Singapore"
+      @restaurants = Restaurant.near(@parameter, 5)
     end   
   end
 end
