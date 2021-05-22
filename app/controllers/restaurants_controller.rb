@@ -1,6 +1,14 @@
 class RestaurantsController < ApplicationController
   def index
     @restaurants = Restaurant.all
+
+    @markers = @restaurants.geocoded.map do |restaurant|
+      {
+        lat: restaurant.latitude,
+        lng: restaurant.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { restaurant: restaurant })
+      }
+    end
   end
 
   def show
@@ -15,7 +23,15 @@ class RestaurantsController < ApplicationController
       redirect_to(root_path, alert: "Empty field!") and return  
     else  
       @parameter = params[:search].strip
-      @restaurants = Restaurant.where("address ~* ?", @parameter)
-    end   
+      @restaurants = Restaurant.near(@parameter, 5)
+
+      @markers = @restaurants.geocoded.map do |restaurant|
+        {
+          lat: restaurant.latitude,
+          lng: restaurant.longitude,
+          info_window: render_to_string(partial: "info_window", locals: { restaurant: restaurant })
+        }
+      end
+    end
   end
 end
