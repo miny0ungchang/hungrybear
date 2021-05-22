@@ -3,5 +3,10 @@
   background-image: image-url("resto-top.jpg");
   background-position: center;
   background-size: cover;
-  min-height: 400px;
+  min-height: 350px;
+
+  h1 {
+    line-height: 1;
+  }
+
 }
