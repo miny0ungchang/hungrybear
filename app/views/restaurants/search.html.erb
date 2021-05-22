@@ -22,7 +22,7 @@
   </div>
 </section>
 
-<section>
+<section class="resto-lists">
   <div class="container mb-5">
     <div class="resto-list-head position-relative mb-5 pb-1 border-bottom">
       <div class="black-dash">
@@ -42,8 +42,10 @@
     <div class="d-flex flex-wrap justify-content-between" >
       <% @restaurants.each do |resto| %>
         <a href="/restaurants/<%= resto.id %>">
-          <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="<%= resto.img_url %>" alt="Card image cap">
+          <div class="card col-3">
+            <div class="card-top">
+              <img class="card-img-top" src="<%= resto.img_url %>" alt="<%= resto.name %> Image">
+            </div>            
             <div class="card-body">
               <h5 class="card-title"><%= resto.name %></h5>
               <p class="card-text">Rating :<%= resto.rating %><i class="bi bi-star"></i></p>
