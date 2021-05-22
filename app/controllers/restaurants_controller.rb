@@ -22,7 +22,7 @@ class RestaurantsController < ApplicationController
     if params[:search].blank?  
       redirect_to(root_path, alert: "Empty field!") and return  
     else  
-      @parameter = params[:search].strip
+      @parameter = params[:search].strip + ", Singapore"
       @restaurants = Restaurant.near(@parameter, 5)
 
       @markers = @restaurants.geocoded.map do |restaurant|

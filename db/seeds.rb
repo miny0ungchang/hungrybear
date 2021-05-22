@@ -17,21 +17,91 @@ resto_catg = %w[French Italian Fast\Food Japanese Indian Chinese Peranakan Korea
   )
 end
 
-15.times do
-  Restaurant.create!(
-    name: Faker::Restaurant.name,
-    address: Faker::Address.full_address, 
-    category: resto_catg.sample, 
-    rating: rand(1..5),
-    min_time: [15, 30, 45].sample,
-    max_time: [60, 90, 120].sample,
-    img_url: resto_images.sample,
-    lat: Faker::Address.latitude,
-    lng: Faker::Address.longitude,
-    #user_id: [1, 2, 3].sample
-    user: User.all.sample
-  )
-end
+# 15.times do
+#   Restaurant.create!(
+#     name: Faker::Restaurant.name,
+#     address: Faker::Address.full_address, 
+#     category: resto_catg.sample, 
+#     rating: rand(1..5),
+#     min_time: [15, 30, 45].sample,
+#     max_time: [60, 90, 120].sample,
+#     img_url: resto_images.sample,
+#     lat: Faker::Address.latitude,
+#     lng: Faker::Address.longitude,
+#     #user_id: [1, 2, 3].sample
+#     user: User.all.sample
+#   )
+# end
+
+Restaurant.create!(
+  name: "Marina Bay hotel with city view",
+  address: "Marina Bay Sands, Singapore", 
+  category: resto_catg.sample, 
+  rating: rand(1..5),
+  min_time: [15, 30, 45].sample,
+  max_time: [60, 90, 120].sample,
+  img_url: resto_images.sample,
+  latitude: 0,
+  longitude: 0,
+  # user_id: [1, 2, 3].sample
+  user: User.all.sample
+)
+
+Restaurant.create!(
+  name: "Little India Street",
+  address: "Little India, Singapore", 
+  category: resto_catg.sample, 
+  rating: rand(1..5),
+  min_time: [15, 30, 45].sample,
+  max_time: [60, 90, 120].sample,
+  img_url: resto_images.sample,
+  latitude: 0,
+  longitude: 0,
+  # user_id: [1, 2, 3].sample
+  user: User.all.sample
+)
+
+Restaurant.create!(
+  name: "Tanjong Pagar",
+  address: "Tanjong Pagar, Singapore", 
+  category: resto_catg.sample, 
+  rating: rand(1..5),
+  min_time: [15, 30, 45].sample,
+  max_time: [60, 90, 120].sample,
+  img_url: resto_images.sample,
+  latitude: 0,
+  longitude: 0,
+  # user_id: [1, 2, 3].sample
+  user: User.all.sample
+)
+
+Restaurant.create!(
+  name: "North Point",
+  address: "930 Yishun Ave 2, Singapore", 
+  category: resto_catg.sample, 
+  rating: rand(1..5),
+  min_time: [15, 30, 45].sample,
+  max_time: [60, 90, 120].sample,
+  img_url: resto_images.sample,
+  latitude: 0,
+  longitude: 0,
+  # user_id: [1, 2, 3].sample
+  user: User.all.sample
+)
+
+Restaurant.create!(
+  name: "Wheelock",
+  address: "501 Orchard Rd, Singapore", 
+  category: resto_catg.sample, 
+  rating: rand(1..5),
+  min_time: [15, 30, 45].sample,
+  max_time: [60, 90, 120].sample,
+  img_url: resto_images.sample,
+  latitude: 0,
+  longitude: 0,
+  # user_id: [1, 2, 3].sample
+  user: User.all.sample
+)
 
 100.times do
   MenuItem.create!(
