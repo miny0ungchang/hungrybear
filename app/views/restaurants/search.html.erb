@@ -3,16 +3,6 @@
     <h1 class="display-4 font-weight-bolder text-white ">You crave.<br>We get it.</h1>
   </div>
 </section>
-<div class="header-restaurant border-bottom">
-  <div class="d-flex justify-content-between m-auto" style="height: 100%; max-width: 1024px;">
-    <div class="d-flex position-relative align-items-center">
-      <div class="d-flex justify-content-between">
-        <div class="bd-highlight">Delivery</div>
-        <div class="bd-highlight" style="padding-left: 10px">📍<%= @parameter %></div> 
-      </div>
-    </div>
-  </div>
-</div>
 
 <section class="border-top border-bottom border-black-50">
   <div class="container py-4">
@@ -29,27 +19,22 @@
       </div>
       <div class="d-flex pt-5">
           <div class="d-flex">
-            <h3 class="font-weight-bold mb-2">Daily Deals</h3>
+            <h3 class="font-weight-bold mb-2">Nearby</h3>
           </div>
-      </div>
-      <div class="d-flex justify-content-between">
-        <p class="text-black-50">Epic deals from your favorite restaurants!</p>
-        <%= link_to root_path, class: 'text-black-50' do %>
-          View all 25 &#x3e;
-        <% end %>
       </div>  
     </div>
-    <div class="d-flex flex-wrap justify-content-between" >
+    <div class="row d-flex flex-wrap flex-start justify-content-between" >
       <% @restaurants.each do |resto| %>
-        <a href="/restaurants/<%= resto.id %>">
-          <div class="card col-3">
+        <a href="/restaurants/<%= resto.id %>" class="col-12 col-md-4 pa-4 mb-5">
+          <div class="card border-0">
             <div class="card-top">
+              <div class="card-focus">
+              </div>
               <img class="card-img-top" src="<%= resto.img_url %>" alt="<%= resto.name %> Image">
             </div>            
-            <div class="card-body">
-              <h5 class="card-title"><%= resto.name %></h5>
-              <p class="card-text">Rating :<%= resto.rating %><i class="bi bi-star"></i></p>
-              <p class="card-text">Delivery Time : <%= resto.min_time %> to <%= resto.max_time %></p>
+            <div class="card-bottom mt-3">
+              <h6 class="card-title font-weight-bold text-dark mb-1"><%= resto.name %></h6>
+              <p class="card-text"><span class="text-success font-weight-bold">$2.99 Delivery</span> <span class="text-secondary">&bull;</span> <span class="text-secondary"><%= resto.min_time %>-<%= resto.max_time %> min</span> <span class="text-secondary">&bull;</span> <span class="text-secondary"><%= resto.category %></span></p>
             </div>
           </div>   
         </a>
