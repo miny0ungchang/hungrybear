@@ -5,4 +5,4 @@ add.addEventListener("click", (event) => {
   event.preventDefault();
   const quantity = parseInt(quantityElement.innerHTML) + 1
   quantityElement.innerHTML = quantity
-}
+})
