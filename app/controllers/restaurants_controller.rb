@@ -7,6 +7,7 @@ class RestaurantsController < ApplicationController
     @restaurant = Restaurant.find(params[:id])
     @menu_items = MenuItem.where(restaurant_id: params[:id])
     @order = Order.new
+    @order_menu_item = OrderMenuItem.new
   end
 
   def search
