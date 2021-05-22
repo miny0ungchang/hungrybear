@@ -24,8 +24,8 @@
         <% end %>
       </h1>
       <nav class="d-flex flex-wrap justify-content-between">
-        <%= link_to 'LOG IN', root_path, class: 'btn btn-outline-dark mr-2 mr-md-3 rounded-pill px-2 px-md-4' %>
-        <%= link_to 'SIGN UP', root_path, class: 'btn btn-dark rounded-pill px-2 px-md-4' %>
+        <%= link_to 'LOG IN', new_user_session_path, class: 'btn btn-outline-dark mr-2 mr-md-3 rounded-pill px-2 px-md-4' %>
+        <%= link_to 'SIGN UP', new_user_registration_path, class: 'btn btn-dark rounded-pill px-2 px-md-4' %>
       </nav>
     </div>
   </header>
@@ -36,10 +36,11 @@
         <p class="font-weight-bold mb-1 text-muted">Postmates is the largest, most reliable on-demand delivery and pickup platform.</p>
         <p class="mb-0 text-muted">Able to deliver anything from anywhere, Postmates is the food delivery, grocery delivery, whatever-you-can-think-of delivery app to bring what you crave right to your door.</p>
       </div>
-        <div class="mt-4">
-          <p class="mb-0 text-light font-weight-bold">&copy; <%= Time.zone.now.year %> <%= link_to 'POSTMATES INC', root_path, class: 'text-light' %></p>
-        </div>
-       </div>
+      <div class="mt-4">
+        <p class="mb-0 text-light font-weight-bold">&copy; <%= Time.zone.now.year %> <%= link_to 'POSTMATES INC', root_path, class: 'text-light' %></p>
+      </div>
+    </div>
   </footer>
 </body>
+
 </html>
