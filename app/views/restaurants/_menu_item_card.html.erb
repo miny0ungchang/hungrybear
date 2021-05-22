@@ -9,7 +9,33 @@
     <div class="menu_item-info">
       <p class="menu_item-name font-weight-bold mt-2 mb-0"> <%= menu_item.name %></p>
       <p class="menu_item-description"> <%= menu_item.description %></p>
-      <a href="#" class="add-to-cart btn btn-primary mt-5" style="witdth: 30rem; height: 100%;">Add to cart</a> 
+      <button type="button" class="btn btn-primary mt-5" style="witdth: 30rem; height: 100%;" data-toggle="modal" data-target="#menuDetail">
+        Add to cart
+      </button>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="menuDetail" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title"><%= menu_item.name %></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="button_group">
+	        <button class="subtract">-</button>
+	        <form class="item-quantity">0</form>
+	        <button class="add">+</button>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="add-to-cart btn btn-primary">Add to cart</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
     </div>
   </div>
 </div>
