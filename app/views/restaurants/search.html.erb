@@ -1,18 +1,13 @@
 <section class="resto-top d-flex flex-wrap align-items-center justify-content-between">
   <div class="container py-5">
-    <h1 class="display-3 font-weight-bolder text-white">You crave.<br>We get it.</h1>
+    <h1 class="display-4 font-weight-bolder text-white ">You crave.<br>We get it.</h1>
   </div>
 </section>
-<div class="header-restaurant border-bottom">
-  <div class="d-flex justify-content-between m-auto" style="height: 100%; max-width: 1024px;">
-    <div class="d-flex position-relative align-items-center">
-      <div class="d-flex justify-content-between">
-        <div class="bd-highlight">Delivery</div>
-        <div class="bd-highlight" style="padding-left: 10px">📍<%= @parameter %></div> 
-      </div>
-    </div>
-  </div>
-</div>
+
+<section class="border-top border-bottom border-black-50">
+  <div class="container py-4">
+    <div class="search-params">
+      <span class="mr-3 text-black-50"><i class="fas fa-map-marker-alt"></i></span> <span class="text-dark font-weight-bold"><%= params[:search] %></span>
 
 <div class="container center mt-4">
   <h3><strong>Find Restaurants</strong></h3>
@@ -24,50 +19,33 @@
   data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
 </div>
 
-<div class="container-restaurant">
-  <div class="d-flex pt-5">
-    <div class="d-flex">
-      <h3><strong>Daily Deals</strong></h3>
+<section class="resto-lists">
+  <div class="container mb-5">
+    <div class="resto-list-head position-relative mb-5 pb-1 border-bottom">
+      <div class="black-dash">
+      </div>
+      <div class="d-flex pt-5">
+          <div class="d-flex">
+            <h3 class="font-weight-bold mb-2">Nearby</h3>
+          </div>
+      </div>  
+    </div>
+    <div class="row d-flex flex-wrap flex-start justify-content-between" >
+      <% @restaurants.each do |resto| %>
+        <a href="/restaurants/<%= resto.id %>" class="col-12 col-md-4 pa-4 mb-5">
+          <div class="card border-0">
+            <div class="card-top">
+              <div class="card-focus">
+              </div>
+              <img class="card-img-top" src="<%= resto.img_url %>" alt="<%= resto.name %> Image">
+            </div>            
+            <div class="card-bottom mt-3">
+              <h6 class="card-title font-weight-bold text-dark mb-1"><%= resto.name %></h6>
+              <p class="card-text"><span class="text-success font-weight-bold">$2.99 Delivery</span> <span class="text-secondary">&bull;</span> <span class="text-secondary"><%= resto.min_time %>-<%= resto.max_time %> min</span> <span class="text-secondary">&bull;</span> <span class="text-secondary"><%= resto.category %></span></p>
+            </div>
+          </div>   
+        </a>
+      <% end %>
     </div>
   </div>
-  <div class="d-flex justify-content-between border-bottom">
-    <p>Epic deals from your favorite restaurants!</p>
-    <p>view all 24</p>
-  </div>
-  <div class="d-flex justify-content-between pt-5" >
-    <% @restaurants.each do |resto| %>
-      <a href="/restaurants/<%= resto.id %>">
-        <div class="card text-dark" style="width: 20rem;">
-          <img class="card-img-top" src="<%= resto.img_url %>" alt="Card image cap">
-          <div class="card-body">
-            <h5 class="card-title"><%= resto.name %></h5>
-            <p class="card-text"><%= resto.address %></p>
-            <p class="card-text">Rating :<%= resto.rating %><i class="bi bi-star"></i></p>
-            <p class="card-text">Delivery Time : <%= resto.min_time %> to <%= resto.max_time %></p>
-          </div>
-        </div>   
-      </a>
-    <% end %>
-  </div>
-  <div class="d-flex pt-5 border-bottom">
-    <div class="d-flex">
-      <h3><strong>Nearby</strong></h3>
-    </div>
-  </div>
-  <div class="d-flex justify-content-between pt-5" >
-    <% @restaurants.each do |resto| %>
-      <a href="/restaurants/<%= resto.id %>">
-        <div class="card text-dark" style="width: 20rem;">
-          <img class="card-img-top" src="<%= resto.img_url %>" alt="Card image cap">
-          <div class="card-body">
-            <h5 class="card-title"><%= resto.name %></h5>
-            <p class="card-text"><%= resto.address %></p>
-            <p class="card-text">Rating :<%= resto.rating %><i class="bi bi-star"></i></p>
-            <p class="card-text">Delivery Time : <%= resto.min_time %> to <%= resto.max_time %></p>
-          </div>
-        </div>   
-      </a>
-    <% end %>
-  </div>
-</div>
-
+</section>
