@@ -9,16 +9,20 @@
     <div class="menu_item-info">
       <p class="menu_item-name font-weight-bold mt-2 mb-0"> <%= menu_item.name %></p>
       <p class="menu_item-description"> <%= menu_item.description %></p>
-      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#clickModal">
-        Add to cart
+      <button class="btn btn-primary" 
+              data-toggle="modal" data-target="#exampleModal" 
+              data-menu-name="<%= menu_item.name %>" 
+              data-menu-price="<%= menu_item.price %>" 
+              data-menu-id="<%= menu_item.id %>">
+                Add to cart
       </button>
     </div>
   </div>
 </div>
 
 <div class="modal fade"
-      id="clickModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"
-      data-current-dish-id="any">
+      id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"
+      data-current-menu-id="any">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header flex-column">
