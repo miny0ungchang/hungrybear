@@ -1,5 +1,5 @@
-const add = document.querySelectorAll('.add-to-cart');
-const quantityElement = document.querySelector('#quantity');
+const addCartBtn = document.getElementById('add-to-cart');
+const count = document.getElementById('total-count');
 
 add.addEventListener("click", (event) => {
   event.preventDefault();
