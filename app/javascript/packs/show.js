@@ -1,8 +1,8 @@
 const addCartBtn = document.getElementById('add-to-cart');
-const count = document.getElementById('total-count');
+const countElement = document.getElementById('total-count');
 
 addCartBtn.addEventListener("click", (event) => {
   event.preventDefault();
-  const quantity = parseInt(quantityElement.innerHTML) + 1
-  quantityElement.innerHTML = quantity
+  const count = parseInt(countElement.innerHTML) + 1
+  countElement = count.innerHTML
 })
