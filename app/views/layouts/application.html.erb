@@ -30,10 +30,11 @@
         <% end %>
       </h1>
       <nav class="d-flex flex-wrap justify-content-between">
-        <%= link_to 'LOG IN', new_user_session_path, class: 'btn btn-outline-dark mr-2 mr-md-3 rounded-pill px-2 px-md-4' %>
-        <%= link_to 'SIGN UP', new_user_registration_path, class: 'btn btn-dark rounded-pill px-2 px-md-4' %>
         <% if user_signed_in? %>
-        <%= link_to "LOG OUT", destroy_user_session_path, method: :delete, class: 'btn btn-dark rounded-pill ml-3 px-2 px-md-4' %>
+          <%= link_to "LOG OUT", destroy_user_session_path, method: :delete, class: 'btn btn-dark rounded-pill ml-3 px-2 px-md-4' %>
+        <% else %>
+          <%= link_to 'LOG IN', new_user_session_path, class: 'btn btn-outline-dark mr-2 mr-md-3 rounded-pill px-2 px-md-4' %>
+          <%= link_to 'SIGN UP', new_user_registration_path, class: 'btn btn-dark rounded-pill px-2 px-md-4' %>
         <% end %>
       </nav>
     </div>
