@@ -1,5 +1,6 @@
 const addCartBtn = document.getElementById("add-to-cart");
 const countElement = document.getElementById("total-count");
+const totalPriceElement = document.getElementById("total-price");
 
 $('.show-menu-modal').on("click", function (e) {
   console.log("show click-modal");
@@ -14,8 +15,15 @@ $('.show-menu-modal').on("click", function (e) {
 
 addCartBtn.addEventListener("click", (event) => {
   event.preventDefault();
-  const count = parseInt(countElement.innerHTML) + 1;
-  countElement.innerHTML = count;
+  const amount = document.querySelector("#menu-amount");
+  console.log(amount.value);
+  const count = parseInt(countElement.innerHTML);
+  console.log(count);
+  if (amount.value === 1) {
+    countElement.innerHTML = count + 1;
+  } else {
+    countElement.innerHTML = count + parseInt(amount.value)
+  }
 });
 
 $(document).on("click", '#add-to-cart', function () {
