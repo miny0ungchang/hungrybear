@@ -61,7 +61,7 @@ MoneyRails.configure do |config|
   # Specify a rounding mode
   # Any one of:
   #
-  # BigDecimal::ROUND_UP,
+  BigDecimal::ROUND_UP,
   # BigDecimal::ROUND_DOWN,
   # BigDecimal::ROUND_HALF_UP,
   # BigDecimal::ROUND_HALF_DOWN,

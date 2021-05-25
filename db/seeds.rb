@@ -108,7 +108,7 @@ Restaurant.create!(
     name: Faker::Food.dish,
     description: Faker::Food.description, 
     img_url: menu_item_images.sample,
-    price: rand(500..5000),
+    price_cents: rand(500..5000),
     restaurant: Restaurant.all.sample
     )
 end
