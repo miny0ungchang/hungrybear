@@ -64,3 +64,4 @@ end
 gem 'geocoder'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 gem 'money-rails'
+gem 'stripe'
