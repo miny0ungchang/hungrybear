@@ -9,37 +9,11 @@
     <div class="menu_item-info">
       <p class="menu_item-name font-weight-bold mt-2 mb-0"> <%= menu_item.name %></p>
       <p class="menu_item-description"> <%= menu_item.description %></p>
-      <button type="button" class="add-btn btn btn-primary" data-toggle="modal" data-target="#clickModal">
+      <button type="button" class="btn btn-primary show-menu-modal" data-hello="hello" data-toggle="modal" data-menu-name="<%= menu_item.name %>"
+        data-menu-price="<%= humanized_price(menu_item.price) %>" data-menu-id="<%= menu_item.id %>" data-target="#click-modal">
         Add to cart
       </button>
     </div>
   </div>
 </div>
 
-<!--
-<div class="modal fade" id="clickModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-current-dish-id="any">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header flex-column">
-        <h5 class="modal-title" id="exampleModalLabel"><%= menu_item.name %></h5>
-        <p class="text-muted modal-price"> SGD</p>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <form>
-          <div class="form-group">
-            <label for="dish-name" class="col-form-label">Quantity</label>
-            <input type="number" class="form-control" id="dish-amount" min="1">
-          </div>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" data-dismiss="modal" id="add-to-cart" class="btn btn-primary btn-modal">Add to Cart</button>
-      </div>
-    </div>
-  </div>
-</div>
--->
