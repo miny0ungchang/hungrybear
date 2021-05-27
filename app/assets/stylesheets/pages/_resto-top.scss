@@ -3,10 +3,23 @@
   background-image: image-url("resto-top.jpg");
   background-position: center;
   background-size: cover;
-  min-height: 350px;
+  height: 350px;
+  z-index: -9;
 
   h1 {
     line-height: 1;
   }
 
+  .resto-top-wrap {
+    height: 350px;
+    transform: translate(-50%);
+    left: 50%;
+  }
+
+}
+
+.location-sticky {
+  position: sticky;
+  top: 70px;
+  z-index: 999;
 }
