@@ -28,8 +28,10 @@ import "bootstrap";
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 import { initMapbox } from '../plugins/init_mapbox';
+import { userCheckIn } from '../packs/checklogin';
 document.addEventListener('turbolinks:load', () => {
   initMapbox();
+  userCheckIn();
 })
 
 document.addEventListener('turbolinks:load', () => {

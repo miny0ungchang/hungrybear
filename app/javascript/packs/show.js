@@ -10,7 +10,6 @@ $('.show-menu-modal').on("click", function (e) {
   const button = $(this)
   const menuName = button.data("menu-name");
   console.log(menuName);
-  debugger
   var menuPrice = button.data("menu-price");
   var menuId = button.data("menu-id");
   console.log(menuPrice);
@@ -30,6 +29,7 @@ addCartBtn.addEventListener("click", (event) => {
   const menuName = document.querySelector("#click-modal").dataset.menuName;
   const totalPrice = parseFloat(totalPriceElement.innerHTML);
   const menuPrice = document.querySelector("#click-modal").dataset.menuPrice;
+  debugger
   let menuPriceAmend = parseFloat(menuPrice.replace('€', ''));
 
   const newOrderItem = {
@@ -42,7 +42,7 @@ addCartBtn.addEventListener("click", (event) => {
   saveToLocalStorage(newOrderItem);
 
   console.log(count);
-  if (amount.value === 1) {
+  if (parseInt(amount.value) === 1) {
     countElement.innerHTML = count + 1;
     totalPriceElement.innerHTML = totalPrice + menuPriceAmend;
   } else {
