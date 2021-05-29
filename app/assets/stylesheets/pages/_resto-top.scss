@@ -23,3 +23,12 @@
   top: 70px;
   z-index: 999;
 }
+
+@media (max-width: 500px) {
+
+  .location-sticky {
+    top: 64px;
+    z-index: 9999;
+  }
+
+}
