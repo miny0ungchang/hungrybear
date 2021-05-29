@@ -6,6 +6,7 @@ const totalPriceElement = document.getElementById("total-price");
 const addedMenuElement = document.getElementById("added-menu");
 const line = document.createElement('br');
 const checkOutButton = document.querySelector("#click-check-out");
+const restaurantId = document.getElementById("restaurant-id").dataset.restaurantId;
 
 const modal = document.querySelector(".show-menu-modal");
 $('.show-menu-modal').on("click", function (e) {
@@ -70,15 +71,15 @@ const saveToLocalStorage = (newOrderItem) => {
 
 checkOutButton.addEventListener("click", () => {
   const url = "/orders"
+  const requestBody = { restaurantId: restaurantId, orderItems: window.localStorage.orderItems }
   fetchWithToken(url, {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
     },
-    body: JSON.stringify(window.localStorage.orderItems)
+    body: JSON.stringify(requestBody)
   }).then((data) => {
-    console.log("AJAX request");
-    console.log(data);
+    window.location.href = data.url
   })
 })
 
