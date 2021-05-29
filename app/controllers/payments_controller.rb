@@ -1,6 +1,6 @@
 class PaymentsController < ApplicationController
   def new
-    @order = Order.find_by(id: 1)
+    @order = current_user.orders.find(params[:order_id])
 
   end
 end
