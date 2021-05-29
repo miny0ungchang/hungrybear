@@ -9,10 +9,14 @@
     <div class="menu_item-info">
       <p class="menu_item-name font-weight-bold mt-2 mb-0"> <%= menu_item.name %></p>
       <p class="menu_item-description"> <%= menu_item.description %></p>
+<<<<<<< Updated upstream
       <button type="button" class="btn btn-primary show-menu-modal" data-hello="hello" data-toggle="modal" data-menu-name="<%= menu_item.name %>"
         data-menu-price="<%= humanized_money_with_symbol(menu_item.price) %>" data-menu-id="<%= menu_item.id %>" data-target="#click-modal">
         Add to cart
       </button>
+=======
+      <input type="button" id="add-to-cart-button" value="ADD TO CART" style="width: 5rem; height: 3rem;">   
+>>>>>>> Stashed changes
     </div>
   </div>
 </div>
