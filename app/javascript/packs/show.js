@@ -1,8 +1,11 @@
+import { fetchWithToken } from "../plugins/fetch_with_token";
+
 const addCartBtn = document.getElementById("add-to-cart");
 const countElement = document.getElementById("total-count");
 const totalPriceElement = document.getElementById("total-price");
 const addedMenuElement = document.getElementById("added-menu");
 const linebreak = document.createElement("br");
+const checkOutButton = document.querySelector("#click-check-out");
 
 const modal = document.querySelector(".show-menu-modal");
 $('.show-menu-modal').on("click", function (e) {
@@ -64,6 +67,20 @@ const saveToLocalStorage = (newOrderItem) => {
   }
   console.log(window.localStorage.orderItems);
 }
+
+checkOutButton.addEventListener("click", () => {
+  const url = "/orders"
+  fetchWithToken(url, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(window.localStorage.orderItems)
+  }).then((data) => {
+    console.log("AJAX request");
+    console.log(data);
+  })
+})
 
 
 
