@@ -4,7 +4,7 @@ const addCartBtn = document.getElementById("add-to-cart");
 const countElement = document.getElementById("total-count");
 const totalPriceElement = document.getElementById("total-price");
 const addedMenuElement = document.getElementById("added-menu");
-const line = document.createElement('br');
+const linebreak = document.createElement("br");
 const checkOutButton = document.querySelector("#click-check-out");
 const restaurantId = document.getElementById("restaurant-id").dataset.restaurantId;
 
@@ -54,7 +54,7 @@ addCartBtn.addEventListener("click", (event) => {
   }
   
   addedMenuElement.innerHTML += menuName;
-  (addedMenuElement.innerHTML).appendChild(line);
+  addedMenuElement.appendChild(linebreak);
 
 });
 

@@ -1,3 +1,5 @@
+<!--
+
 <div class="col-3 mb-3">
   <div class="menu_item-card">
     <div class="menu_item-display">
@@ -17,3 +19,24 @@
   </div>
 </div>
 
+-->
+
+<div class="restaurant-menu-item col-12 col-md-6 mb-5">
+  <div class="d-flex flex-wrap justify-content-between border border-black-50">
+    <div class="restaurant-menu-item-info p-4 position-relative col-8 col-md-9">
+      <h6 style="font-weight-bold text-dark"><%= menu_item.name %></h6>
+      <div class="restaurant-menu-description">
+        <p class="text-secondary mb-0"><%= menu_item.description %></p>
+      </div>
+      <h6 class="restaurant-menu-item-price font-weight-bold text-success position-absolute"><%= humanized_money_with_symbol(menu_item.price) %></h6>
+    </div>
+    <div class="restaurant-menu-image position-relative col-4 col-md-3 px-0">
+      <button type="button" class="restaurant-menu-add-btn show-menu-modal" data-hello="hello" data-toggle="modal" data-menu-name="<%= menu_item.name %>"
+        data-menu-price="<%= humanized_money_with_symbol(menu_item.price) %>" data-menu-id="<%= menu_item.id %>" data-target="#click-modal">
+        +
+      </button>
+      <img class="menu_item-image" src="<%= menu_item.img_url %>" alt="<% menu_item.name %>">
+    </div>
+  </div>
+  
+</div>
