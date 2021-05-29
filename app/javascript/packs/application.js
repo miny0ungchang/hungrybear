@@ -29,8 +29,10 @@ import "bootstrap";
 // import { initSelect2 } from '../components/init_select2';
 import { initMapbox } from '../plugins/init_mapbox';
 import { userCheckIn } from '../packs/checklogin';
+import { setUpCart } from '../packs/show';
 document.addEventListener('turbolinks:load', () => {
   initMapbox();
   userCheckIn();
+  setUpCart();
 })
 
