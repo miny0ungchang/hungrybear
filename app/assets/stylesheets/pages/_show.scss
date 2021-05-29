@@ -1,0 +1,55 @@
+.resto-show-top {
+  background-image: image-url("resto-show-top-bg.jpg");
+  background-position: center;
+  background-size: cover;
+  height: 300px;
+  z-index: -9;
+
+  h1 {
+    line-height: 1;
+  }
+
+  .resto-show-top-wrap {
+    height: 300px;
+    transform: translate(-50%);
+    left: 50%;
+  }
+
+}
+
+
+.cart-content-count {
+
+  min-width: 100px;
+
+  .cart-icon {
+    border-right: 1px solid rgba(0,0,0,0.25);
+    margin-right: 10px;
+    padding-right: 10px;
+  }
+
+  .total-count {
+
+    :before {
+      content: '\f07a';
+      font-family: 'Font Awesome 5 Free';
+    }
+
+  }
+
+}
+
+
+.restaurant-info-pills {
+
+  border-radius: 999px;
+  display: inline-block;
+  margin-right: 1rem;
+  padding: 0.5rem 1rem;
+
+  p {
+    font-size: 0.8rem;
+    margin-bottom: 0;
+  }
+
+}

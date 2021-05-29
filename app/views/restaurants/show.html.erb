@@ -1,7 +1,31 @@
 <% content_for :page_title do %>
-  <%= @restaurant.name %> |
+  <%= @restaurant.name %> &bull; Order Online &bull;
 <% end %>
 
+<section class="resto-show-top d-flex flex-wrap align-items-center justify-content-between position-relative w-100">
+  <div class="resto-show-top-wrap container py-5 position-fixed d-flex align-items-center w-100">
+    <div class="resto-show-top-text-wrap container w-100 center">
+      
+    </div>
+  </div>
+</section>
+
+<section class="location-sticky border-top border-bottom border-black-50 bg-white">
+  <div class="container py-3">
+    <div class="d-flex flex-wrap align-items-center justify-content-between">
+      <div class="search-params">
+        <span class="text-dark font-weight-bold">Delivery</span>
+      </div>
+      <div class="cart-content-count-wrap border border-secondary rounded-pill">
+        <div class="cart-content-count py-2 px-3">
+            <span class="cart-icon"><i class="fas fa-shopping-cart"></i> </span> <span class="font-weight-bold text-secondary"> <span id="total-count">0</span> ITEMS </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--
 <section class="menu-top d-flex flex-wrap align-items-center justify-content-between">
 </section>
 <div class="header-restaurant border-bottom">
@@ -14,6 +38,46 @@
     </div>
   </div>
 </div>
+-->
+
+<section class="restaurant-container">
+  <div class="container">
+    <div class="col-12 d-flex flex-wrap px-0 py-4">
+      <div class="restaurant-info col-12 col-md-6 px-0">
+        <div class="restaurant-delivery-price text-success">
+          <p class="mb-1">FREE DELIVERY</p>
+        </div>
+        <h1 class="restaurant-name font-weight-bold mb-0"> <%= @restaurant.name %> </h1>
+        <div class="restaurant-info-pills-container mt-3">
+          <div class="restaurant-info-pills border border-black-50 restaurant-delivery-time">
+            <p><span class="text-secondary mr-1"><i class="fas fa-clock"></i></span>  <%= @restaurant.min_time %></span>-<span class="max-time"><%= @restaurant.max_time %> MIN</p>
+          </div>
+          <div class="restaurant-info-pills border border-black-50 restaurant-address">
+            <p><span class="text-secondary mr-1"><i class="fas fa-map-marker-alt"></i></span> <%= @restaurant.address %></p>
+          </div>
+          <div class="restaurant-info-pills border border-black-50 restaurant-rating">
+            <p> <%= '★' * @restaurant.rating %> </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-6">
+        <div class="restaurant-order-summary border border-black-50 p-4">
+          <h5 class="font-weight-bold">YOUR ORDERS</h5>
+          <p id="added-menu"></p>
+          <div class="d-flex flex-wrap justify-content-between align-items-last mt-5">
+            <div class="restaurant-total-items">
+              <p class="mb-1">TOTAL ITEMS: <span id="total-count">0</span></p>
+              <h4 class="text-success font-weight-bold">SGD <span id="total-price"></h4>
+            </div>
+            <div class="restaurant-checkout-btn mt-4">
+              <a href="#" class="btn btn-dark rounded-pill px-4 py-2">CHECK OUT</a>
+            </div>
+          </div>
+        </div>
+      </div>    
+    </div>
+  </div>
+</section>
 
 <div class="container-restaurant">
   <div class="row">
@@ -35,11 +99,11 @@
         <div class="card-body">
           <h2 class="order-summary">Your Order Summary</h2>
           <div class="mt-5">
-            <p>Added item list:<br><span id="added-menu"></span></p>
+            <!-- <p>Added item list:<br><span id="added-menu"></span></p>-->
             <p style="margin-top: 70px;">Quantity: <span id="total-count">0</span></p>
             <p>Total price: $SGD <span id="total-price">0</p>
           </div>
-          <a href="#" class="btn btn-primary mt-5" style="witdth: 30rem;">Check out</a>
+          
         </div>
       </div>
     </div>  

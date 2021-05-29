@@ -2,7 +2,7 @@ const addCartBtn = document.getElementById("add-to-cart");
 const countElement = document.getElementById("total-count");
 const totalPriceElement = document.getElementById("total-price");
 const addedMenuElement = document.getElementById("added-menu");
-const line = document.createElement('br');
+const linebreak = document.createElement("br");
 
 const modal = document.querySelector(".show-menu-modal");
 $('.show-menu-modal').on("click", function (e) {
@@ -29,7 +29,6 @@ addCartBtn.addEventListener("click", (event) => {
   const menuName = document.querySelector("#click-modal").dataset.menuName;
   const totalPrice = parseFloat(totalPriceElement.innerHTML);
   const menuPrice = document.querySelector("#click-modal").dataset.menuPrice;
-  debugger
   let menuPriceAmend = parseFloat(menuPrice.replace('€', ''));
 
   const newOrderItem = {
@@ -51,7 +50,7 @@ addCartBtn.addEventListener("click", (event) => {
   }
   
   addedMenuElement.innerHTML += menuName;
-  (addedMenuElement.innerHTML).appendChild(line);
+  addedMenuElement.appendChild(linebreak);
 
 });
 
