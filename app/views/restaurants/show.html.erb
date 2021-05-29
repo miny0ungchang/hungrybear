@@ -35,9 +35,9 @@
         <div class="card-body">
           <h2 class="order-summary">Your Order Summary</h2>
           <div class="mt-5">
-            <p>Added item list</p>
-            <p>Quantity: <%= @order_menu_item.quantity %></p>
-            <p>Total order amount: <%= @order.total_order %></p>
+            <p>Added item list:<br><span id="added-menu"></span></p>
+            <p style="margin-top: 70px;">Quantity: <span id="total-count">0</span></p>
+            <p>Total price: $SGD <span id="total-price">0</p>
           </div>
           <button class="btn btn-primary mt-5" style="width: 30rem;" id="click-check-out">Check out</button>
         </div>
