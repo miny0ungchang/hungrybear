@@ -20,7 +20,7 @@
     <div class="col-sm-6">
       <div class="resto-card">
         <div class="card-body">
-          <h1 class="resto-name font-weight-bold mt-2 mb-0"><%= @restaurant.name %></h1>
+          <h1 id="restaurant-id" data-restaurant-id="<%= @restaurant.id %>" class="resto-name font-weight-bold mt-2 mb-0"><%= @restaurant.name %></h1>
           <p class="card-text"><%= @restaurant.address %></p>
           <img src="<%= @restaurant.img_url %>" alt="" width="300" height="200">
           <div class="delivery-time">
