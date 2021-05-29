@@ -1,7 +1,10 @@
 <div class="container mt-5">
-  <h2> Order Summary </h2>
-  <p> <%= @order.menu_items.name %> Price: $200 Quantity: 1</p>
-  <p>Total Purchase: $<%= @order.total_order %></p>
+  <h2> Order ID #00000<%= @order.id %> Summary </h2>
+  <p>
+  <strong><%= @order.restaurant.name %></strong><br>
+  <%= @order.restaurant.address %>
+  </p>
+  <p>Total Purchase: $<%= @order.total_order/100 %></p>
   <p>Status: Paid </p>
   <p>Delivery Status: Pending</p>
 </div>
