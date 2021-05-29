@@ -5,6 +5,7 @@ class OrdersController < ApplicationController
 
   def create
     # @menu_items = Menu_items.find(params[:teddy_id])
+    puts params
     @order  = Order.create!(total_order: 200)
   
     session = Stripe::Checkout::Session.create(
