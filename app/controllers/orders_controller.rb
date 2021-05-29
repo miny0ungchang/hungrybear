@@ -22,7 +22,7 @@ class OrdersController < ApplicationController
       { name: order_item.menu_item.name,
         images: [order_item.menu_item.img_url],
         amount: order_item.menu_item.price_cents,
-        currency: 'eur',
+        currency: 'sgd',
         quantity: order_item.quantity
       }
     end 
