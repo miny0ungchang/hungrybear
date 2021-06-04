@@ -2,8 +2,8 @@
   <div class="row py-4">
     <div class="col">
       <h1>Checkout summary</h1>
-      <p>Purchase from <strong><%= @order.restaurant.name %></strong> for <strong><%= humanized_money_with_symbol(@order.total_order) %></strong></p>
-      <p>Total: <%= humanized_money_with_symbol(@order.total_order) %></p>
+      <p>Purchase from <strong><%= @order.restaurant.name %></strong> for <strong>$<%= @order.total_order/100 %></strong></p>
+      <p>Total: $<%= @order.total_order/100 %></p>
       <button id="pay" class="btn btn-primary">Pay</button>
       <script src="https://js.stripe.com/v3/"></script>
       <script>
